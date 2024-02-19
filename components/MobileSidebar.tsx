@@ -7,6 +7,14 @@ import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import SideBar from "./SideBar";
 
 const MobileSidebar = () => {
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
+
   return (
     <Sheet>
       <SheetTrigger>
